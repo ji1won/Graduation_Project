@@ -19,7 +19,36 @@
 
 ![image](https://github.com/ji1won/Graduation_Project/assets/141638383/765682d0-c03a-4f09-9194-bad3dfd1a3bc)
 
+### 🔸모델 개발
+
+1. **데이터셋 만들기**
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6cf08890-fce4-4627-9364-9d1e26610dce/Untitled.png)
+
+chin : 턱을 괸 채로 있는 자세
+head down : 고개를 너무 숙인 채로 공부하는 자세
+Right pose : 올바른 자세
+Tilted : 고개가 좌/우로 너무 치우쳐진 자세
+Turtleneck : 목이 너무 앞으로 나온 거북목 자세
+
+1. **자세별 랜드마크 시각화**
+
+![image](https://github.com/ji1won/Graduation_Project/assets/141638383/fb39954e-ed3d-42b0-8c5d-a6459d8a76dc)
+
+1. **모델 훈련**
+
+키포인트들의 numpy값들을 이용해 데이터를 준비하고 테스트 데이터를 전체 데이터의 0.05로 지정함. Epoch : 300으로 설정 후 DNN 모델로 훈련 진행
+
+1. **훈련 결과**
+
+![image](https://github.com/ji1won/Graduation_Project/assets/141638383/6f3eb43e-17fc-4762-9b0f-8dcc3194fd63)
+
+![image](https://github.com/ji1won/Graduation_Project/assets/141638383/915d3409-49a7-43c0-a24f-bde3d378cd63)
 
 ### 🔸개발 환경
 
-![image](https://github.com/ji1won/Graduation_Project/assets/141638383/7dbd8d0a-d938-4c4c-bb03-268f239b5fe3)
+![image](https://github.com/ji1won/Graduation_Project/assets/141638383/b97785e7-22fa-4104-a7fe-8e2db3db7c20)
+
+### 🔸최종 구성 웹 화면
+
+![image](https://github.com/ji1won/Graduation_Project/assets/141638383/6d8c1201-cb64-4161-be67-1323db9dc1e4)
