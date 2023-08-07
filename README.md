@@ -23,7 +23,7 @@
 
 1. **데이터셋 만들기**
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6cf08890-fce4-4627-9364-9d1e26610dce/Untitled.png)
+![image](https://github.com/ji1won/Graduation_Project/assets/141638383/a34874c8-fc37-4ad0-9112-5e4cc2ad46b2)
 
 chin : 턱을 괸 채로 있는 자세
 head down : 고개를 너무 숙인 채로 공부하는 자세
