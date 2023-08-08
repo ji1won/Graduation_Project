@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>자세 통계</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="/static/posedb.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="title">
+        <a href="/"><img src="/static/images/바른자세생활바름.png" class="lefttoplogo"></a>
+    </div>
+    <div class="container">
+        <div class="titleimg"><img src="/static/images/자세누적비율.png" class="title1logo"></div>
+        <div class="chart-container">{{ pie_html | safe }}</div>
+
+        <div class="titleimg"><img src="/static/images/자세별주간통계.png" class="title2logo"></div>
+        <div class="chart-container">{{ weekusage_html | safe }}</div>
+
+        <div class="titleimg"><img src="/static/images/일별사용시간.png" class="title3logo"></div>
+        <div class="chart-container">{{ dayusage_html | safe }}</div>
+        
+    </div>
+    <div class="footer"></div>
+    
+
+</body>
+</html>
