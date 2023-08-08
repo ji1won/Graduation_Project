@@ -1,0 +1,187 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.body{
+  background-color: #344150;
+}
+
+.container{
+  background-color: #333333;
+  background-size: cover;
+  background-position: center center;
+  width: 100vw;
+  min-height: 100vh;
+  padding-left: 8%;
+  padding-right: 8%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.navbar{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  flex: 1;
+  text-align: right;
+}
+
+nav ul li{
+  list-style: none;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+
+nav ul li img{
+  height: 30px;
+}
+
+
+.lefttoplogo{
+  width: 200px;
+  cursor: pointer;
+  margin: 30px 0;
+}
+
+.title{
+  text-align: center;
+  font-size:50px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+.titlelogo{
+  width: 500px;
+  margin-top: 20px;
+}
+
+
+.container1{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #344150;
+  color: black;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  height: 100%;
+}
+
+.camera {
+  justify-content: center center;
+  align-items: center center;
+  margin: 30px;
+  width: 700px; 
+  height: 540px;
+  background-color: #ccc;
+}
+
+.camera p {
+  color: #ccc;
+}
+
+.function {
+  justify-content: center;
+  margin: 30px;
+  flex: 1; 
+  min-width: 500px;
+  max-height: 700px;
+  background-color: gray;
+}
+
+
+#poseResult{
+  justify-content: center;
+  background-color: rgb(149, 176, 96);
+  box-sizing: border-box;
+  width: 95%;
+  height: 205px;
+  width: auto;
+  margin: 30px;
+  float: center;
+  font-size: 60px;
+  padding-top: 45px;
+  color: rgb(249, 248, 248);
+}
+
+#warningMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(45, 102, 5);
+  width: auto;
+  height: 205px;
+  margin: 30px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  font-size: 50px;
+  color: rgb(249, 248, 248);
+}
+
+
+
+
+button{
+  width: 140px;
+  border: 0;
+  padding: 12px 10px;
+  outline: none;
+  color: #000;
+  background-color: #ccc;
+  border-radius: 6px;
+  border: 2px  #344150;
+  cursor: pointer;
+}
+
+/* 모달 창 스타일 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 700px;
+  height: 350px;
+  overflow: auto;
+  background-color: rgba(182, 244, 227, 0.626);
+}
+
+.modal-content {
+  background-color: #1a6c5d93;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  color :rgb(249, 248, 248)
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #dcebd7;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer {
+  width: 101%;
+  height: 100px;
+  background-color: #333333;
+}
