@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>바른자세 생활바름</title>
+     <link href="/static/style_web.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="/static/images/바른자세생활바름흰색.png" class="lefttoplogo">
+                <nav>
+                    <ul>
+                        <li><a href="https://www.youtube.com/"><img src="/static/images/yt1.png"></a></li>
+                        <li><a href="https://www.facebook.com/"><img src="/static/images/fb1.png"></a></li>
+                        <li><a href="https://www.instagram.com/"><img src="/static/images/ig.png"></a></li>
+                    </ul>
+                </nav>
+        </div>
+        <div class="row">
+            <div class="title">
+                  <img src="/static/images/바른자세생활바름.png" class="titlelogo">
+            </div>
+            <div class = "container1">
+                    <div class="camera">
+                        <p>실시간 자세 교정 Camera</p>
+                         <img src="{{ url_for('video_feed') }}" alt="Pose Estimation">
+                    </div>
+                    <div class="function">
+                         <div id="poseResult"></div>
+                         <div id="warningMessage"></div>
+                         <button onclick="window.location.href='/posedb'">통계 확인</button>
+                    </div>
+                    </div>
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+                    <script>
+                        // SocketIO 클라이언트 설정 및 서버와 연결
+                        const socket = io();
+                        
+                        // Flask 서버에서 실시간으로 pose_result 값을 가져와서 'poseResult' div에 출력하는 함수
+                        function fetchPoseResult() {
+                            fetch('/pose_result')
+                            .then(response => response.json())
+                            .then(data => {
+                                document.getElementById('poseResult').textContent = data.result;
+                            });
+                        }
+                        
+                        // Flask 서버에서 실시간으로 warning_message 값을 가져와서 'warningMessage' div에 출력하는 함수
+                        function fetchWarningMessage() {
+                            fetch('/warning_message')
+                            .then(response => response.json())
+                            .then(data => {
+                                document.getElementById('warningMessage').textContent = data.message;
+                            });
+                        }
+                        
+                        // SocketIO 클라이언트로부터 'headdown_alert' 이벤트를 수신하여 경고 팝업을 표시하는 함수
+                        socket.on('headdown_alert', function(message) {
+                            // 모달 창 엘리먼트 가져오기
+                            var modal = document.getElementById("myModal");
+
+                            // 모달 창 내용 엘리먼트 가져오기
+                            var modalContent = document.getElementById("modal-content");
+
+                            // 모달 창 닫기 버튼 가져오기
+                            var closeBtn = document.getElementsByClassName("close")[0];
+
+                            // 경고 메시지 표시
+                            modalContent.innerHTML = "<h3>고개를 너무 숙이고 있습니다.</h3><p>" + 
+                                message + "</p>";
+
+                            // 모달 창 표시
+                            modal.style.display = "block";
+
+                            // 모달 창 닫기 버튼 클릭 이벤트 처리
+                            closeBtn.onclick = function() {
+                                modal.style.display = "none";
+                            }
+                        });
+                        
+                        // 1초마다 fetchPoseResult 함수를 호출하여 pose_result 값을 가져와서 'poseResult' div에 출력
+                        setInterval(fetchPoseResult, 1000);
+                        setInterval(fetchWarningMessage, 1000);
+                    </script>
+                    <!-- 모달 창 -->
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h1>경고</h1>
+                            <p id="modal-content"></p>
+                        </div>
+                    </div>
+                    
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    
+</body>
+</html>
